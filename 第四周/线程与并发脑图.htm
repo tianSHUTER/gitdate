@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="keyword" content="kityminder,脑图,思维导图,kity,svg,minder,百度,fex,前端,在线">
+    <meta name="description" content="百度脑图，便捷的脑图编辑工具。让您在线上直接创建、保存并分享你的思路。">
+    <base href="https://naotu.baidu.com/"/>
+    <title>百度脑图－便捷的思维工具</title>
+
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <link rel="stylesheet" href="public/dist/kityminder.online.min.css?_=857e68f62702abb9"/>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b5dc86992129396a6f64d7f1bf72a16d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body ng-app="kityminder" ng-controller="MainController">
+<editor-head></editor-head>
+<kityminder-editor on-init="initEditor(editor, minder)"></kityminder-editor>
+<main-menu></main-menu>
+<input id="km-csrf" type="hidden" name="csrf_token" value="f86ae431a0cc9575b15948048076792a" />
+</body>
+
+<script src="public/dist/kityminder.online.min.js?_=2f284e4ef91d5a3c"></script>
+<script>
+    angular.module('kityminder')
+        .controller('MainController', ['$scope', 'valueTransfer', function($scope, valueTransfer) {
+            valueTransfer.role = 'editor';
+
+            $scope.initEditor = function(editor, minder) {
+                window.editor = editor;
+                window.minder = minder;
+            };
+        }]);
+
+</script>
+
+</html>
