@@ -1,6 +1,7 @@
 package io.kimmking.spring02;
 
-import io.kimmking.spring01.Student;
+
+import io.kimmking.domain.Student;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
