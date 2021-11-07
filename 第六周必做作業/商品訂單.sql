@@ -9,7 +9,7 @@ create table main_tab.users(id bigint, name varchar(8), comment varchar(16));
 create table fork_tab_1.users(id bigint, name varchar(8), comment varchar(16));
 create table fork_tab_2.users(id bigint, name varchar(8), comment varchar(16));
 
-insert into demo_master.users values(1,'tian1','main'),(2,'tian2','main'),(3,'tian3','main');
+insert into main_tab.users values(1,'tian1','main'),(2,'tian2','main'),(3,'tian3','main');
 insert into demo_slave_0.users values(1,'tian1','fork'),(2,'tian2','fork'),(3,'tian3','fork');
 insert into demo_slave_1.users values(1,'tian1','fork'),(2,'tian2','fork'),(3,'tian3','fork');
 
