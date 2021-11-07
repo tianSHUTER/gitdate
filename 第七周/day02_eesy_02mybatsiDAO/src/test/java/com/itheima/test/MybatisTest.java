@@ -1,4 +1,4 @@
-package com.itheima.test;
+﻿package com.itheima.test;
 
 import com.itheima.dao.IUserDao;
 import com.itheima.domain.User;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author 黑马程序员
+ *
  * @Company http://www.ithiema.com
  *
  * 测试mybatis的crud操作
