@@ -8,6 +8,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 public class UserServiceImpl implements UserService {
 
 
+    @HmilyTCC(confirmMethod ="comfirmSuc",cancelMethod="CancelRoll")
     @Override
     public User exchange2doller(int rmb) {
         User user = new User();
@@ -16,7 +17,10 @@ public class UserServiceImpl implements UserService {
        user.setMoney_rmb(money_rmb-rmb);
         return user;
     }
-
+ public void comfirmSuc(){
+     System.out.println("提交成功");
+ }
+    @HmilyTCC(confirmMethod ="comfirmSuc",cancelMethod="CancelRoll")
     @Override
     public User exchange2rmb(int doller) {
 
@@ -26,4 +30,8 @@ public class UserServiceImpl implements UserService {
         user.setMoney_doller(money_doller-doller);
         return user;
     }
+    public void CancelRoll(){
+        System.out.println("回滚业务");
+    }
+
 }
