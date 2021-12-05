@@ -5,7 +5,7 @@ create schema fork_tab_1;
 ##建立用戶從表2
 create schema fork_tab_2;
 
-create table main_tab.users(id bigint, name varchar(8), comment varchar(16));
+create table main_tab.users(id bigint, name varchar(48), comment varchar(48));
 create table fork_tab_1.users(id bigint, name varchar(8), comment varchar(16));
 create table fork_tab_2.users(id bigint, name varchar(8), comment varchar(16));
 

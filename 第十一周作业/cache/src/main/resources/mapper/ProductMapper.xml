@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.kimmking.cache.mapper.ProductMapper">
+
+<!--    开启mybatis cache  -->
+<!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache">-->
+<!--        <property name="memoryStoreEvictionPolicy" value="LRU"/>-->
+<!--    </cache>-->
+
+
+    <resultMap id="ProductResultMap" type="io.kimmking.cache.entity.Product">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="productName" jdbcType="VARCHAR" property="productName" />
+        <result column="number" jdbcType="INTEGER" property="number" />
+    </resultMap>
+
+    <select id="reduce" resultType="io.kimmking.cache.entity.Product">
+        select * from product where id = #{id}
+    </select>
+
+    <select id="all" resultType="io.kimmking.cache.entity.Product">
+        select * from product
+    </select>
+
+</mapper>
