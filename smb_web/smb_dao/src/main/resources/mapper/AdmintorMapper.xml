@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dubbo_hmily.smb_dao.mapper.AdmintorMapper">
+
+<!--    开启mybatis cache  -->
+<!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache">-->
+<!--        <property name="memoryStoreEvictionPolicy" value="LRU"/>-->
+<!--    </cache>-->
+
+
+    <resultMap id="AdmintorResultMap" type="dubbo_hmily.smb_api.Admintor">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="admname" jdbcType="VARCHAR" property="admname" />
+        <result column="manageList" jdbcType="INTEGER" property="manageList" />
+    </resultMap>
+
+    <select id="findAdmintorById" resultMap="AdmintorResultMap">
+        select * from admintor where id = #{id}
+    </select>
+
+    <select id="findAll" resultMap="AdmintorResultMap">
+        select * from admintor
+    </select>
+
+    <select id="login" resultMap="AdmintorResultMap">
+        select * from admintor where id=#{id},name=#{name}
+    </select>
+
+    <insert id="addAdmintor" parameterMap="AdmintorResultMap" >
+        INSERT INTO admintor VALUES (admintor.admname,admintor.id,admintor.manageList);
+    </insert>
+
+    <delete id="deleteAdmintor" >
+        DELETE admintor where id = #{id}
+    </delete>
+
+    <select id="findManageList" resultType="String">
+        select TABLE_NAME from ds where TABLE_NAME =#{manageList}
+    </select>
+</mapper>

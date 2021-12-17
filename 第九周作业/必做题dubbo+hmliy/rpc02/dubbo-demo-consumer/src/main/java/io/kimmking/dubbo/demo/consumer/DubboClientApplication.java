@@ -1,13 +1,7 @@
 package io.kimmking.dubbo.demo.consumer;
 
-import io.kimmking.dubbo.demo.api.User;
-import io.kimmking.dubbo.demo.api.UserService;
-import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
@@ -47,7 +41,7 @@ public class DubboClientApplication {
 	@Bean
 	public ApplicationRunner runner() {
 		return args -> {
-			User user = userService.exchange2doller(7);
+			BIConversion.User user = userService.exchange2doller(7);
 			System.out.println("转换之后的doller"+user.getMoney_doller());
 		};
 	}

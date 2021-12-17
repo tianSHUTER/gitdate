@@ -3,6 +3,7 @@ package io.kimmking.dubbo.demo.provider;
 import io.kimmking.dubbo.demo.api.User;
 import io.kimmking.dubbo.demo.api.UserService;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.dromara.hmily.annotation.HmilyTCC;
 
 @DubboService(version = "1.0.0")
 public class UserServiceImpl implements UserService {
