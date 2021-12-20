@@ -1,11 +1,6 @@
-spring:
+zhang:
   kafka:
-    # 软件老王，kafka集群服务器地址
-    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    consumer:
-      group-id: test
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    binder:
+      brokers: localhost:9092
+        zk-nodes: localhost:2181
+      group: zhang-group
